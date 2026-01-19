@@ -10,14 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Get code
-    - uses: actions/checkout@v4
+      uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
         node-version: 18
+
     - name: Install dependencies
       run: npm install
+
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+
     - name: Run E2E tests
       run: npx playwright test
 
